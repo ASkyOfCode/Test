@@ -2,7 +2,7 @@ package main;
 import "fmt"
 func InsertSort(array []int){
     for i := 0;i<len(array);i++ {
-	    for j := 0;j<i;j++ { 
+	   /* for j := 0;j<i;j++ { 
 	        if array[j] > array[i] {
 		   temp := array[i]
 		   index := i;
@@ -13,7 +13,14 @@ func InsertSort(array []int){
 		   array[j] = temp
 		   break
 	      }
-           }
+           }*/
+	   j := i
+	   temp := array[i]
+      for j>0 && temp < array[j-1] {
+		  array[j] = array[j-1]
+		  j--
+	  }
+	  array[j] = temp
     }  
 }
 func main(){
