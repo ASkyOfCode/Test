@@ -1,7 +1,7 @@
 public class InsertSort{
 	static void Insert_Sort(int[] array){
 	   for(int i = 0; i < array.length; i++){
-	      for(int j = 0; j < i; j++){          
+	      /*for(int j = 0; j < i; j++){          
 	         if(array[j] > array[i]){
                    int temp = array[i];
                    int index = i;	            
@@ -12,7 +12,14 @@ public class InsertSort{
 		   array[j] = temp;
 		   break;
 		 }
-	      }
+	      }*/
+		 int j = i;
+		 int temp = array[i];
+		 while(j>0 && temp < array[j-1]){
+			 array[j] = array[j-1];
+			 j--;
+		 }
+		 array[j] = temp;
 	   }
 	}
 	public static void main(String[] args){
