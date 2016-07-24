@@ -2,10 +2,14 @@ package main
 import "fmt"
 func SelectSort(array []int){
 	for i:=0;i<len(array)-1;i++ {
+		index := i
 		for j:=i+1;j<len(array);j++ {
-			if array[i] > array[j]{
-				array[i],array[j] = array[j],array[i]
+			if array[index] > array[j]{
+				index = j;
 			}
+		}
+		if index != i {
+				array[i],array[index] = array[index],array[i]
 		}
 	}
 }
