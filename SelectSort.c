@@ -1,13 +1,17 @@
 #include <stdio.h>
 void SelectSort(int *array,int length){
    for(int i=0;i<length-1;i++){
+       int index = i;
 	   for(int j=i+1;j<length;j++){
-		   if(array[i] > array[j]){
-			   int temp = array[i];
-			   array[i] = array[j];
-			   array[j] = temp;
+		     if(array[index] > array[j]){
+			     index = j;
+		      }
+	        }
+      	   if(index != i){
+ 			   int temp = array[i];
+			   array[i] = array[index];
+			   array[index] = temp;
 		   }
-	   }
    }
 }
 void main(){
